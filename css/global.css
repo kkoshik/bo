@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-main: Arial, sans-serif;
+    --font-title: Georgia, serif;
+}
+
+html {
+    background-color: rgb(230, 242, 238);
+    font-family: var(--font-main);
+}
+
+header {
+    background-color: rgb(50, 150, 110);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+header img {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+header h1 {
+    font-family: var(--font-title);
+    font-size: 24px;
+    margin: 6px;
+}
+
+nav a {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 8px 8px 0 rgb(50, 150, 110);
+    border-radius: 8px;
+}
+
+main h1,
+main h2 {
+    font-family: var(--font-title);
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+form {
+    width: 80%;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+select,
+button {
+    font-family: var(--font-main);
+    width: 100%;
+    padding: 9px;
+}
+
+button {
+    background-color: rgb(50, 150, 110);
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(35, 115, 82);
+}
+
+p {
+    text-align: center;
+    margin: 10px;
+}
+
+#slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#slider img {
+    width: 400px;
+    height: 260px;
+    object-fit: cover;
+}
+
+#slider button {
+    width: 45px;
+}
+
+.tasks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.task {
+    border: 1px solid rgb(200, 200, 200);
+    border-left: 6px solid rgb(50, 150, 110);
+    padding: 12px;
+    background-color: rgb(248, 252, 250);
+    border-radius: 8px;
+}
+
+.task-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.task-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 4px 0;
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.status {
+    background-color: rgb(50, 150, 110);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+.small-text {
+    font-size: 14px;
+    color: rgb(90, 90, 90);
+}
+
+.admin-tools {
+    flex-direction: row;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.pagination a {
+    color: white;
+    background-color: rgb(50, 150, 110);
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgb(50, 150, 110);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(120, 120, 120);
+    z-index: 10;
+}
+
+/* Анимации */
+
+.task {
+    animation: showTask 0.4s ease;
+}
+
+@keyframes showTask {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button {
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.popup {
+    animation: showPopup 0.3s ease;
+}
+
+@keyframes showPopup {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task {
+    transition: 0.2s;
+}
+
+.task:hover {
+    transform: scale(1.01);
+}
+
+/* Анимации */
+
+
+@media screen and (max-width: 900px) {
+    main {
+        width: 95%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .tasks {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-tools {
+        flex-direction: column;
+    }
+
+    #slider img {
+        width: 75%;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    #slider img {
+        width: 70%;
+        height: 160px;
+    }
+}

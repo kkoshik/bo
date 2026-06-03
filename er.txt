@@ -1,0 +1,31 @@
++------------------+                  +------------------+
+| users            |                  | tasks            |
++------------------+                  +------------------+
+| id PK            |                  | id PK            |
+| login UK         |────────────< | login FK         |
+| password         |                  | name             |
+| fio              |                  | date             |
+| birthday         |                  | oplata           |
+| email            |                  | status           |
+| phone            |                  | review           |
+| role             |                  +------------------+
++------------------+
+
+Поле	Тип	Ключ	Описание
+id	INT	PK	ID пользователя
+login	VARCHAR(50)	UK	Уникальный логин
+password	VARCHAR(50)		Пароль
+fio	VARCHAR(150)		ФИО
+birthday	DATE		Дата рождения
+email	VARCHAR(100)		Email
+phone	VARCHAR(30)		Телефон
+role	VARCHAR(30)		Роль пользователя
+
+Поле	Тип	Ключ	Описание
+id	INT	PK	ID заявки
+login	VARCHAR(50)	FKЛогин пользователя
+name	VARCHAR(100)		Выбранная услуга
+date	VARCHAR(20)		Дата заявки
+oplata	VARCHAR(50)		Способ оплаты
+status	VARCHAR(50)		Статус заявки
+review	TEXT		Отзыв
